@@ -1,0 +1,13 @@
+Не получилось создать папку  Games
+Не получилось создать папку  Games/src
+Не получилось создать папку  Games/src/main
+Не получилось создать папку  Games/src/test
+Не получилось создать папку  Games/res
+Не получилось создать папку  Games/res/drawables
+Не получилось создать папку  Games/res/vectors
+Не получилось создать папку  Games/res/icons
+Не получилось создать папку  Games/savegames
+Не получилось создать папку  Games/temp
+Не получилось создать файл  Games/src/main/Main.java
+Не получилось создать файл  Games/src/main/Utils.java
+Не получилось создать файл  Games/temp/temp.txt
