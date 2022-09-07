@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -30,14 +31,24 @@ public class MainIn {
 
     }
 
-    public static void saveGame(GameProgress game,String file){
-        try(FileOutputStream fos = new FileOutputStream(file)){
-            byte[] bytes =game.toString().getBytes();
-            fos.write(bytes,0,bytes.length);
-        }catch (Exception ex){
+//    public static void saveGame(GameProgress game,String file){
+//        try(FileOutputStream fos = new FileOutputStream(file)){
+//            byte[] bytes =game.toString().getBytes();
+//            fos.write(bytes,0,bytes.length);
+//        }catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//    }
+
+    public static void saveGame(GameProgress game, String file) {
+        try (FileOutputStream fos = new FileOutputStream(file);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(game);
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
+
 
     public static void zipFiles(String dir,List fileList){
         try(ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(dir+"output.zip"));
